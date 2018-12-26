@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+project.ext {
+    appcompat = "28.0.0"
+    arch = "1.0.0-alpha1"
+    retrofit = "2.5.0"
+    constraintLayout = "1.0.2"
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "mycompany.com.scrollablelist"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar']  )
+  /* // implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation ('androidx.appcompat:appcompat:1.1.0-alpha01'){
+        exclude group: 'com.android.support'
+    }
+   // implementation 'androidx.constraintlayout:constraintlayout:1.1.0-alpha01'
+    implementation ("com.squareup.retrofit2:retrofit:$project.retrofit"){
+        exclude group: 'com.android.support'
+    }
+    implementation ("com.squareup.retrofit2:converter-gson:$project.retrofit"){
+        exclude group: 'com.android.support'
+    }
+    //implementation "com.squareup.retrofit2:converter-simplexml:$project.retrofit"
+
+    implementation ('androidx.recyclerview:recyclerview:1.1.0-alpha01'){
+        exclude group: 'com.android.support'
+    }
+    implementation ('androidx.cardview:cardview:1.0.0'){
+        exclude group: 'com.android.support'
+    }
+
+    implementation ('androidx.lifecycle:lifecycle-common:2.0.0-rc01'){
+        exclude group: 'com.android.support'
+    }
+    implementation ('androidx.lifecycle:lifecycle-livedata:2.0.0-rc01'){
+        exclude group: 'com.android.support'
+    }
+    implementation ('androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'){
+        exclude group: 'com.android.support'
+    }*/
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Support Libs
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:coordinatorlayout:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-annotations:28.0.0'
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    /*// Dagger dependenciesa
+    implementation 'com.google.dagger:dagger:2.13'
+    implementation 'com.google.dagger:dagger-android-support:2.13'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
+    */
+
+    // Network stuff
+    implementation "com.squareup.okhttp3:logging-interceptor:3.6.0"
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:converter-simplexml:2.3.0"
+
+    //Glide for Image loading and caching
+    implementation ('com.github.bumptech.glide:glide:4.8.0') {
+                exclude group: "com.android.support"
+            }
+    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
+
+
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.8.0"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation "com.android.support:support-fragment:28.0.0"
+}

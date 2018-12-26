@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ScrollableList</string>
+    <string name="loading_articles">Loading...</string>
+    <string name="article_header_text">Research and Insights</string>
+    <string name="label_articles">Research &amp; Insights</string>
+    <string name="previous_article_header_text">Previous Articles</string>
+
+
+</resources>
